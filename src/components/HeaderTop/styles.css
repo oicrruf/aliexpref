@@ -1,3 +1,6 @@
+.navbar__header {
+  background-color: #fff;
+}
 .navbar__header > .container {
   display: flex;
   justify-content: space-between;
