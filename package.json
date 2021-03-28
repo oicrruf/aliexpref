@@ -19,7 +19,8 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"prettier": "npx prettier --write src/*"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -47,8 +48,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"pre-commit": "npx prettier --write src/*"
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 		}
 	}
 }

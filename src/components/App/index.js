@@ -8,15 +8,15 @@ const { appName } = config;
 document.querySelector("title").innerText = `Inicio | ${appName}`;
 
 const App = () => {
-	return (
-		<React.Fragment>
-			<div className="wrapper">
-				<HeaderTop />
-				<SearchBar />
-				<Home />
-			</div>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <div className="wrapper">
+        <HeaderTop />
+        <SearchBar />
+        <Home />
+      </div>
+    </React.Fragment>
+  );
 };
 
 export { App };
