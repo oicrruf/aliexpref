@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
 }
-.input-group {
+.search-bar .input-group {
   align-self: center;
   height: 48px;
   max-width: 500px;

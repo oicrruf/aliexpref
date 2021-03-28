@@ -10,7 +10,7 @@ import "./styles.css";
 import axios from "axios";
 import { config } from "../../config";
 import { unique } from "../../utils";
-
+import { Footer } from "../";
 const { products } = config;
 
 export const Categories = () => {
@@ -159,6 +159,7 @@ export const Home = (props) => {
         </Header>
         <Categories />
         <AllProducts />
+        <Footer />
       </div>
     </React.Fragment>
   );
