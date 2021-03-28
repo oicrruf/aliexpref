@@ -4,14 +4,10 @@ import "./styles.css";
 import { config } from "../../config";
 import { BsSearch } from "react-icons/bs";
 import axios from "axios";
-
 import { FaRegHeart } from "react-icons/fa";
 import { RiShoppingBagLine } from "react-icons/ri";
-
-const { logo, appName, products } = config;
-const unique = (value, index, item) => {
-  return item.indexOf(value) === index;
-};
+import { unique } from "../../utils";
+const { logo, products } = config;
 
 export const SearchBar = () => {
   const [list, setList] = useState(["Todas las categorías"]);
@@ -36,7 +32,7 @@ export const SearchBar = () => {
           c.category != undefined && categoriesList.push(c.category);
         });
 
-        setCategories(categoriesList.filter(unique));
+        setCategories(categoriesList.filter(unique).sort());
       })
       .catch((e) => {
         console.log(e);
