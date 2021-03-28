@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { HeaderTop, Home, SearchBar } from "../";
 import { config } from "../../config";
-import { HeaderTop } from "../HeaderTop";
-import { SearchBar } from "../SearchBar";
 import "./styles.css";
 
-const { appName, products } = config;
+const { appName } = config;
 
 document.querySelector("title").innerText = `Inicio | ${appName}`;
 
 const App = () => {
 	return (
 		<React.Fragment>
-			<HeaderTop />
-			<SearchBar />
+			<div className="wrapper">
+				<HeaderTop />
+				<SearchBar />
+				<Home />
+			</div>
 		</React.Fragment>
 	);
 };
