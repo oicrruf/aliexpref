@@ -57,14 +57,14 @@ export const Footer = () => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Buscar"
+                  placeholder="Correo electrónico"
                 />
                 <button
                   className="btn btn-outline-secondary"
                   type="button"
                   id="search"
                 >
-                  Suscribe
+                  Suscribirse
                 </button>
               </div>
             </div>
@@ -77,7 +77,7 @@ export const Footer = () => {
             <div className="col-lg-6">
               <Link to="/">
                 <img
-                  src="./assets/img/logo-devf-black.svg"
+                  src="/assets/img/logo-devf-black.svg"
                   className="img-fluid w-25"
                 />
               </Link>

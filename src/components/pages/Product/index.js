@@ -1,11 +1,13 @@
 import React from "react";
 import { Footer, HeaderTop, SearchBar } from "../../";
-
-export const Product = () => {
+import { ProductDetail } from "../../organisms/ProductDetail";
+export const Product = (props) => {
+  const { id } = props.match.params;
   return (
     <React.Fragment>
       <HeaderTop />
       <SearchBar />
+      <ProductDetail id={id} />
       <Footer />
     </React.Fragment>
   );

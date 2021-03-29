@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { AiOutlineCar, AiOutlineTool } from "react-icons/ai";
 import { CgGames } from "react-icons/cg";
-import { FaRegHeart, FaStar } from "react-icons/fa";
+
 import { FiMusic, FiShoppingCart } from "react-icons/fi";
 import { MdChildCare } from "react-icons/md";
 import { RiComputerLine, RiHome3Line } from "react-icons/ri";
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { HeaderTop, SearchBar, Footer } from "../../";
 import { config } from "../../../config";
 import { unique } from "../../../utils";
+import { Rating } from "../../atoms/Rating";
 import { Header } from "../../Header";
 import "./styles.css";
 const { products } = config;
@@ -110,28 +111,21 @@ export const AllProducts = (props) => {
               if (p.category === e) {
                 return (
                   <div key={i} className="single-product" id={p._id}>
-                    <Link to="product">
+                    <Link to={`product/${p._id}`}>
                       <img
                         className="img-fluid"
                         src={
                           p.image && p.image.includes(".")
                             ? p.image
-                            : "./assets/img/product.jpg"
+                            : "/assets/img/product.jpg"
                         }
                       />
                     </Link>
-                    <Link to="product">
+                    <Link to={`product/${p._id}`}>
                       <h6>{p.product_name}</h6>
                     </Link>
-                    <div className="product-rating">
-                      <div>
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                      </div>
-                      <FaRegHeart />
+                    <div className="rating-block">
+                      <Rating />
                     </div>
                     <h4>
                       {p.price !== undefined ? `$${p.price}.00` : `$0.00`}

@@ -19,9 +19,10 @@ const App = () => {
           <Route path="/signup">
             <SignUp />
           </Route>
-          <Route path="/product">
-            <Product />
-          </Route>
+          <Route
+            path="/product/:id"
+            render={(props) => <Product {...props} />}
+          />
           <Route path="/">
             <Home />
           </Route>
