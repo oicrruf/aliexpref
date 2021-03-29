@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css";
-import { config } from "../../config";
-import { BsSearch } from "react-icons/bs";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
+import { BsSearch } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { RiShoppingBagLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
+import { config } from "../../config";
 import { unique } from "../../utils";
+import "./styles.css";
 const { logo, products } = config;
 
 export const SearchBar = () => {
@@ -42,7 +43,10 @@ export const SearchBar = () => {
     <React.Fragment>
       <div className="search-bar">
         <div className="container">
-          <img src={logo} id="logo" className="img-fluid" />
+          <Link to="/">
+            <img src={logo} id="logo" className="img-fluid" />
+          </Link>
+
           <div className="input-group">
             <input type="text" className="form-control" placeholder="Buscar" />
             <select

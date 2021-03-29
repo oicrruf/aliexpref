@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
@@ -74,10 +75,12 @@ export const Footer = () => {
         <div className="container">
           <div className="footer-content row">
             <div className="col-lg-6">
-              <img
-                src="./assets/img/logo-devf-black.svg"
-                className="img-fluid w-25"
-              />
+              <Link to="/">
+                <img
+                  src="./assets/img/logo-devf-black.svg"
+                  className="img-fluid w-25"
+                />
+              </Link>
               <div className="contact-info">
                 <div className="info-detail">
                   <span>Llámanos ahora:</span>

@@ -4,8 +4,9 @@ import { config } from "../../config";
 import { country } from "../../data";
 import { Dropdown } from "../Dropdown";
 import "./styles.css";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
-const { appName, logo } = config;
+const { appName } = config;
 
 export const HeaderTop = () => {
   const [countriesList, setCountriesList] = useState([]);
@@ -30,7 +31,8 @@ export const HeaderTop = () => {
           </div>
           <div className="navbar__header-nav">
             <a href="#">Bienvenido a {appName}</a>|<a href="#">Contáctanos</a>|
-            <a href="#">Iniciar Sesión</a>|<a href="#">Crear cuenta</a>
+            <Link to="/login">Iniciar Sesión</Link>|
+            <Link to="/signup">Crear cuenta</Link>
           </div>
         </div>
       </div>

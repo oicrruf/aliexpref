@@ -5,12 +5,14 @@ import { FiMusic, FiShoppingCart } from "react-icons/fi";
 import { MdChildCare } from "react-icons/md";
 import { RiComputerLine, RiHome3Line } from "react-icons/ri";
 import { FaStar, FaRegHeart } from "react-icons/fa";
-import { Header } from "../Header";
+import { Header } from "../../Header";
 import "./styles.css";
 import axios from "axios";
-import { config } from "../../config";
-import { unique } from "../../utils";
-import { Footer } from "../";
+import { config } from "../../../config";
+import { unique } from "../../../utils";
+import { Footer } from "../..";
+import { HeaderTop, SearchBar } from "../../";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 const { products } = config;
 
 export const Categories = () => {
@@ -89,7 +91,7 @@ export const AllProducts = (props) => {
         setAllProducts(data);
         let categoriesList = [];
         data.map((c) => {
-          c.category != undefined && categoriesList.push(c.category);
+          c.category !== undefined && categoriesList.push(c.category);
         });
         setCategories(categoriesList.filter(unique).sort());
       })
@@ -106,10 +108,10 @@ export const AllProducts = (props) => {
           <hr />
           <div className="products-by-category">
             {allProducts.map((p, i) => {
-              if (p.category == e) {
+              if (p.category === e) {
                 return (
                   <div key={i} className="single-product" id={p._id}>
-                    <a href="#">
+                    <Link to="product">
                       <img
                         className="img-fluid"
                         src={
@@ -118,10 +120,10 @@ export const AllProducts = (props) => {
                             : "./assets/img/product.jpg"
                         }
                       />
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="product">
                       <h6>{p.product_name}</h6>
-                    </a>
+                    </Link>
                     <div className="product-rating">
                       <div>
                         <FaStar />
@@ -132,7 +134,9 @@ export const AllProducts = (props) => {
                       </div>
                       <FaRegHeart />
                     </div>
-                    <h4>{p.price != undefined ? `$${p.price}.00` : `$0.00`}</h4>
+                    <h4>
+                      {p.price !== undefined ? `$${p.price}.00` : `$0.00`}
+                    </h4>
                   </div>
                 );
               }
@@ -154,6 +158,8 @@ export const Home = (props) => {
   return (
     <React.Fragment>
       <div className="home__container">
+        <HeaderTop />
+        <SearchBar />
         <Header>
           <div className="container">{props.children}</div>
         </Header>

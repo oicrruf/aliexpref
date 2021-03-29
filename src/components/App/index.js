@@ -1,5 +1,6 @@
 import React from "react";
-import { HeaderTop, Home, SearchBar } from "../";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Home, SignUp, Login, Product } from "../pages";
 import { config } from "../../config";
 import "./styles.css";
 
@@ -10,11 +11,22 @@ document.querySelector("title").innerText = `Inicio | ${appName}`;
 const App = () => {
   return (
     <React.Fragment>
-      <div className="wrapper">
-        <HeaderTop />
-        <SearchBar />
-        <Home />
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/product">
+            <Product />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </React.Fragment>
   );
 };
