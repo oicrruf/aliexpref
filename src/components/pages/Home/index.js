@@ -1,18 +1,17 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { AiOutlineCar, AiOutlineTool } from "react-icons/ai";
 import { CgGames } from "react-icons/cg";
+import { FaRegHeart, FaStar } from "react-icons/fa";
 import { FiMusic, FiShoppingCart } from "react-icons/fi";
 import { MdChildCare } from "react-icons/md";
 import { RiComputerLine, RiHome3Line } from "react-icons/ri";
-import { FaStar, FaRegHeart } from "react-icons/fa";
-import { Header } from "../../Header";
-import "./styles.css";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import { HeaderTop, SearchBar, Footer } from "../../";
 import { config } from "../../../config";
 import { unique } from "../../../utils";
-import { Footer } from "../..";
-import { HeaderTop, SearchBar } from "../../";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Header } from "../../Header";
+import "./styles.css";
 const { products } = config;
 
 export const Categories = () => {
