@@ -1,5 +1,12 @@
 import React from "react";
+import { Footer, HeaderTop, SearchBar } from "../../";
 
 export const Product = () => {
-  return <div>Product</div>;
+  return (
+    <React.Fragment>
+      <HeaderTop />
+      <SearchBar />
+      <Footer />
+    </React.Fragment>
+  );
 };
