@@ -115,3 +115,10 @@
 .rating-block {
   padding: 0px 10px;
 }
+.category-name svg {
+  margin-top: -5px !important;
+}
+.category-name span {
+  padding: 0px 10px;
+  color: #999;
+}

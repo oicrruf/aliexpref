@@ -5,7 +5,7 @@ import { MainTemplate } from "../../templates";
 export const Login = () => {
   return (
     <React.Fragment>
-      <MainTemplate>
+      <MainTemplate title={"Iniciar sesión"}>
         <Form />
       </MainTemplate>
     </React.Fragment>

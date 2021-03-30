@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { UserInfo } from "../../organisms";
 import { MainTemplate } from "../../templates";
-
-import "./styles.css";
 
 export const Me = (props) => {
   return (
     <React.Fragment>
-      <MainTemplate>Me</MainTemplate>
+      <MainTemplate title={"Perfil"}>
+        <UserInfo />
+      </MainTemplate>
     </React.Fragment>
   );
 };

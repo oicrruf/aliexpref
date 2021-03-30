@@ -5,7 +5,7 @@ import { MainTemplate } from "../../templates";
 export const SingUp = () => {
   return (
     <React.Fragment>
-      <MainTemplate>
+      <MainTemplate title={"Registrarme"}>
         <Form />
       </MainTemplate>
     </React.Fragment>

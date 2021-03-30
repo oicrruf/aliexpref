@@ -3,10 +3,6 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import { Home, SingUp, Login, Product, Me } from "./components/pages";
 import { config } from "./config";
 
-const { appName } = config;
-
-document.querySelector("title").innerText = `Inicio | ${appName}`;
-
 const App = () => {
   return (
     <React.Fragment>

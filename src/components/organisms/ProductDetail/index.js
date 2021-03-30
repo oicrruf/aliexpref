@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { config } from "../../../config";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { config } from "../../../config";
+import { auth } from "../../../utils";
 import { Rating } from "../../atoms/Rating";
 import "./styles.css";
-import { auth } from "../../../utils";
 
-const { single_product } = config;
+const { appName, single_product } = config;
 export const ProductDetail = (props) => {
   const [product, setProduct] = useState({});
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    auth.isAuthenticated()
-  );
+  const [isAuthenticated, setIsAuthenticated] = useState();
   useEffect(() => {
+    setIsAuthenticated(auth.isAuthenticated());
     axios
       .get(`${single_product + props.id}`)
       .then((r) => {
@@ -22,6 +21,9 @@ export const ProductDetail = (props) => {
         console.log(e);
       });
   }, []);
+  document.querySelector(
+    "title"
+  ).innerText = `${product.product_name} | ${appName}`;
   return (
     <React.Fragment>
       <div className="border-bottom">
