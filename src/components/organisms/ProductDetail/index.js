@@ -4,10 +4,14 @@ import { config } from "../../../config";
 import { Link } from "react-router-dom";
 import { Rating } from "../../atoms/Rating";
 import "./styles.css";
+import { auth } from "../../../utils";
 
 const { single_product } = config;
 export const ProductDetail = (props) => {
   const [product, setProduct] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    auth.isAuthenticated()
+  );
   useEffect(() => {
     axios
       .get(`${single_product + props.id}`)
@@ -23,11 +27,11 @@ export const ProductDetail = (props) => {
       <div className="border-bottom">
         <div className="container">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
                 <Link to="/">Inicio</Link>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 {product.product_name}
               </li>
             </ol>
@@ -64,18 +68,29 @@ export const ProductDetail = (props) => {
                 </span>
               </div>
             </div>
-            <Link
-              to="/"
-              type="submit"
-              className="btn btn-primary btn-product 
+            {isAuthenticated ? (
+              <Link
+                to="/"
+                type="submit"
+                className="btn btn-primary btn-product 
 							mt-4"
-            >
-              {" "}
-              Añadir al carrito
-            </Link>
+              >
+                {" "}
+                Añadir al carrito
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                type="submit"
+                className="btn btn-primary btn-product 
+							mt-4"
+              >
+                {" "}
+                Iniciar sesión
+              </Link>
+            )}
           </div>
         </div>
-        {/* {JSON.stringify(product)} */}
       </div>
     </React.Fragment>
   );

@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
-import { Home, SignUp, Login, Product } from "../pages";
-import { config } from "../../config";
-import "./styles.css";
+import { Home, SingUp, Login, Product, Me } from "./components/pages";
+import { config } from "./config";
 
 const { appName } = config;
 
@@ -13,11 +12,14 @@ const App = () => {
     <React.Fragment>
       <Router>
         <Switch>
+          <Route path="/me">
+            <Me />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/signup">
-            <SignUp />
+          <Route path="/singup">
+            <SingUp />
           </Route>
           <Route
             path="/product/:id"

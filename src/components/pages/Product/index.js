@@ -1,14 +1,14 @@
 import React from "react";
-import { Footer, HeaderTop, SearchBar } from "../../";
 import { ProductDetail } from "../../organisms/ProductDetail";
+import { MainTemplate } from "../../templates";
+
 export const Product = (props) => {
   const { id } = props.match.params;
   return (
     <React.Fragment>
-      <HeaderTop />
-      <SearchBar />
-      <ProductDetail id={id} />
-      <Footer />
+      <MainTemplate>
+        <ProductDetail id={id} />
+      </MainTemplate>
     </React.Fragment>
   );
 };

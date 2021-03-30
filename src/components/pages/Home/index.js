@@ -1,64 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { AiOutlineCar, AiOutlineTool } from "react-icons/ai";
-import { CgGames } from "react-icons/cg";
-
-import { FiMusic, FiShoppingCart } from "react-icons/fi";
-import { MdChildCare } from "react-icons/md";
-import { RiComputerLine, RiHome3Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { HeaderTop, SearchBar, Footer } from "../../";
 import { config } from "../../../config";
-import { unique } from "../../../utils";
+import { popularCategories } from "../../../data";
+import { auth, unique } from "../../../utils";
 import { Rating } from "../../atoms/Rating";
-import { Header } from "../../Header";
+import { Header } from "../../organisms";
+import { MainTemplate } from "../../templates";
 import "./styles.css";
+
 const { products } = config;
 
 export const Categories = () => {
-  const popularCategories = [
-    {
-      id: "automotive",
-      name: "Automotive",
-      icon: <AiOutlineCar className="category-box__icon" />,
-    },
-    {
-      id: "computers",
-      name: "Computers",
-      icon: <RiComputerLine className="category-box__icon" />,
-    },
-    {
-      id: "games",
-      name: "Games",
-      icon: <CgGames className="category-box__icon" />,
-    },
-    {
-      id: "grocery",
-      name: "Grocery",
-      icon: <FiShoppingCart className="category-box__icon" />,
-    },
-    {
-      id: "home",
-      name: "Home",
-      icon: <RiHome3Line className="category-box__icon" />,
-    },
-    {
-      id: "kids",
-      name: "Kids",
-      icon: <MdChildCare className="category-box__icon" />,
-    },
-    {
-      id: "music",
-      name: "Music",
-      icon: <FiMusic className="category-box__icon" />,
-    },
-
-    {
-      id: "tools",
-      name: "Tools",
-      icon: <AiOutlineTool className="category-box__icon" />,
-    },
-  ];
   const categoriesBox = popularCategories.map((b, i) => {
     return (
       <div key={i} className="category-box">
@@ -148,18 +101,16 @@ export const AllProducts = (props) => {
 };
 
 export const Home = (props) => {
+  const [user, setUser] = useState(auth.isAuthenticated());
   return (
     <React.Fragment>
-      <div className="home__container">
-        <HeaderTop />
-        <SearchBar />
+      <MainTemplate>
         <Header>
           <div className="container">{props.children}</div>
         </Header>
         <Categories />
         <AllProducts />
-        <Footer />
-      </div>
+      </MainTemplate>
     </React.Fragment>
   );
 };

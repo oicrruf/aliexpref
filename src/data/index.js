@@ -1,1 +1,1 @@
-export { country } from "./local";
+export { country, popularCategories } from "./local";

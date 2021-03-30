@@ -1,8 +1,8 @@
 import React from "react";
-import { LoginForm as Form } from "../../organisms/Auth";
+import { SingUpForm as Form } from "../../organisms/Auth";
 import { MainTemplate } from "../../templates";
 
-export const Login = () => {
+export const SingUp = () => {
   return (
     <React.Fragment>
       <MainTemplate>
