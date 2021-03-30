@@ -1,12 +1,12 @@
 import React from "react";
-import { LoginForm as Form } from "../../organisms/Auth";
+import { UserInfo } from "../../organisms";
 import { MainTemplate } from "../../templates";
 
-export const Login = () => {
+export const Me = (props) => {
   return (
     <React.Fragment>
-      <MainTemplate title={"Iniciar sesión"}>
-        <Form />
+      <MainTemplate title={"Perfil"}>
+        <UserInfo />
       </MainTemplate>
     </React.Fragment>
   );

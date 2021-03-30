@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { config } from "../../../config";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { config } from "../../../config";
+import { auth } from "../../../utils";
 import { Rating } from "../../atoms/Rating";
 import "./styles.css";
 
-const { single_product } = config;
+const { appName, single_product } = config;
 export const ProductDetail = (props) => {
   const [product, setProduct] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState();
   useEffect(() => {
+    setIsAuthenticated(auth.isAuthenticated());
     axios
       .get(`${single_product + props.id}`)
       .then((r) => {
@@ -18,16 +21,19 @@ export const ProductDetail = (props) => {
         console.log(e);
       });
   }, []);
+  document.querySelector(
+    "title"
+  ).innerText = `${product.product_name} | ${appName}`;
   return (
     <React.Fragment>
       <div className="border-bottom">
         <div className="container">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
                 <Link to="/">Inicio</Link>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 {product.product_name}
               </li>
             </ol>
@@ -64,18 +70,29 @@ export const ProductDetail = (props) => {
                 </span>
               </div>
             </div>
-            <Link
-              to="/"
-              type="submit"
-              className="btn btn-primary btn-product 
+            {isAuthenticated ? (
+              <Link
+                to="/"
+                type="submit"
+                className="btn btn-primary btn-product 
 							mt-4"
-            >
-              {" "}
-              Añadir al carrito
-            </Link>
+              >
+                {" "}
+                Añadir al carrito
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                type="submit"
+                className="btn btn-primary btn-product 
+							mt-4"
+              >
+                {" "}
+                Iniciar sesión
+              </Link>
+            )}
           </div>
         </div>
-        {/* {JSON.stringify(product)} */}
       </div>
     </React.Fragment>
   );

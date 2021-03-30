@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./styles.css";
-import { config } from "../../../config";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { config } from "../../../config";
 import { regex } from "../../../utils";
+import "./styles.css";
 const { register, login } = config;
 
 export const FormContainer = (props) => {
@@ -16,7 +16,7 @@ export const FormContainer = (props) => {
   );
 };
 
-export const SignUpForm = () => {
+export const SingUpForm = () => {
   const [form, setForm] = useState({});
   const handlerForm = (value, input) => {
     setForm({ ...form, [input]: value });
@@ -39,7 +39,7 @@ export const SignUpForm = () => {
       axios
         .post(register, data)
         .then((r) => {
-          r.status == 200 && redirect();
+          r.status === 200 && redirect();
         })
         .catch((e) => {
           console.log(e);
@@ -178,7 +178,7 @@ export const LoginForm = () => {
       axios
         .post(login, data)
         .then((r) => {
-          r.status == 200 && localStorage.setItem("@session", r.data.token);
+          r.status === 200 && localStorage.setItem("@session", r.data.token);
         })
         .catch((e) => {
           console.log(e);
@@ -236,7 +236,7 @@ export const LoginForm = () => {
               type="submit"
               className="btn btn-primary btn-auth mt-4"
             >
-              Crear mi cuenta
+              Iniciar sesión
             </button>
           </div>
           <div className="col-lg-6">

@@ -5,12 +5,12 @@ import { BsSearch } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { RiShoppingBagLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { config } from "../../config";
-import { unique } from "../../utils";
+import { config } from "../../../config";
+import { unique } from "../../../utils";
 import "./styles.css";
 const { logo, products } = config;
 
-export const SearchBar = () => {
+export const SearchBar = (props) => {
   const [list, setList] = useState(["Todas las categorías"]);
   const [categories, setCategories] = useState([]);
 
@@ -30,9 +30,8 @@ export const SearchBar = () => {
         let data = r.data;
         let categoriesList = [];
         data.map((c) => {
-          c.category != undefined && categoriesList.push(c.category);
+          c.category !== undefined && categoriesList.push(c.category);
         });
-
         setCategories(categoriesList.filter(unique).sort());
       })
       .catch((e) => {

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import { config } from "../../config";
+import { config } from "../../../config";
 import { FaFacebookF, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { unique } from "../../utils";
+import { unique } from "../../../utils";
 import axios from "axios";
 const { appName, products } = config;
 
@@ -28,7 +28,7 @@ export const Footer = () => {
         let data = r.data;
         let categoriesList = [];
         data.map((c) => {
-          c.category != undefined && categoriesList.push(c.category);
+          c.category !== undefined && categoriesList.push(c.category);
         });
 
         setCategories(categoriesList.filter(unique).sort());

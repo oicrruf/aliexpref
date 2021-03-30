@@ -19,7 +19,12 @@ export const Header = () => {
             <span>Productos</span>
           </div>
         </div>
-        <a id="all-products" type="button" className="btn btn-light">
+        <a
+          id="all-products"
+          type="button"
+          className="btn btn-light"
+          href="#products__container"
+        >
           Ver todos los productos
         </a>
       </div>
