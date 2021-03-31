@@ -37,8 +37,11 @@ footer {
   padding: 50px 0px;
   color: #333;
 }
+.footer-content > div > a > img {
+  max-width: 180px;
+}
 .contact-info {
-  margin-top: 40px;
+  margin: 40px 0px;
 }
 .contact-info,
 .info-follow > h6 {
@@ -66,4 +69,24 @@ footer {
 .categories-list > li > a {
   color: #999;
   text-decoration: none;
+}
+@media (max-width: 425px) {
+  .newsletter-block h5 {
+    display: flex;
+    align-self: baseline;
+    font-size: 1rem;
+  }
+  .contact-info,
+  .info-detail > h6 {
+    font-size: 0.8rem;
+  }
+  .categories-info {
+    margin-left: 0px;
+  }
+  .footer-bottom {
+    font-size: 0.6rem;
+  }
+  .footer-bottom > img {
+    max-width: 150px;
+  }
 }

@@ -48,3 +48,12 @@
   font-size: 2rem;
   margin-left: 20px;
 }
+@media (max-width: 425px) {
+  #search-bar__categories {
+    display: none;
+  }
+  #search {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -82,7 +82,7 @@ export const Footer = () => {
                       ? "/assets/img/logo-devf-black.svg"
                       : `${domain}/assets/img/logo-devf-black.svg`
                   }
-                  className="img-fluid w-25"
+                  className="img-fluid"
                 />
               </Link>
               <div className="contact-info">

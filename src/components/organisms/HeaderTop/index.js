@@ -11,7 +11,7 @@ const { appName, me, domain } = config;
 
 const AccountButtons = (props) => {
   const [user, setUser] = useState({});
-  useEffect(() => {
+  const getUser = () => {
     axios
       .get(me, {
         headers: {
@@ -26,9 +26,10 @@ const AccountButtons = (props) => {
       .catch((e) => {
         console.log(e);
       });
-  }, []);
+  };
 
   if (props.isAuthenticated) {
+    getUser();
     return (
       <React.Fragment>
         |
@@ -84,7 +85,6 @@ export const HeaderTop = (props) => {
             <Dropdown name={"País"} type={"country"} data={countriesList} />
           </div>
           <div className="navbar__header-nav">
-            <Link href="#">Bienvenido a {appName}</Link>|
             <Link to="/contact">Contáctanos</Link>
             <AccountButtons isAuthenticated={props.isAuthenticated} />
           </div>

@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Map } from "../../atoms";
 import { Link } from "react-router-dom";
 import { AiFillPhone, AiFillMail, AiOutlineGithub } from "react-icons/ai";
 import "./styles.css";
 
 export const ContactForm = () => {
+  const [moveButton, setMoveButton] = useState(false);
+  useEffect(() => {
+    const { matches } = window.matchMedia("(max-width: 425px)");
+    setMoveButton(matches);
+  }, []);
+  useEffect(() => {
+    const button = document.querySelector("#send-message");
+    const message = document.querySelector("#whats-on-your-mind");
+    message.parentNode.appendChild(button);
+  }, [moveButton]);
   return (
     <div className="container" id="form-contact">
       <Map />
@@ -31,8 +41,12 @@ export const ContactForm = () => {
                 </label>
                 <input type="email" className="form-control" id="phone" />
               </div>
-              <Link className="btn btn-primary btn-auth mt-4" to="/me/edit">
-                Editar
+              <Link
+                id="send-message"
+                className="btn btn-primary btn-auth mt-4"
+                to="/me/edit"
+              >
+                Enviar mensaje
               </Link>
             </div>
             <div className="col-lg-6">

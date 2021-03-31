@@ -48,3 +48,9 @@
   color: #f4631b;
   font-weight: 900;
 }
+@media (max-width: 425px) {
+  .form-container__title > h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+}

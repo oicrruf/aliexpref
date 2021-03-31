@@ -35,3 +35,13 @@
 .form-control {
   border-radius: 0px;
 }
+@media (max-width: 425px) {
+  .user-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .avatar-and-action.float-right {
+    float: unset !important;
+    margin-bottom: 40px;
+  }
+}

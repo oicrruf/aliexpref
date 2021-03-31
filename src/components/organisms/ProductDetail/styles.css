@@ -40,3 +40,8 @@
   font-weight: 700;
   text-decoration: none;
 }
+@media (max-width: 425px) {
+  .product-detail > div > img {
+    margin-bottom: 50px;
+  }
+}

@@ -34,3 +34,21 @@
 .form-contact label {
   color: #999;
 }
+@media (max-width: 425px) {
+  .form-contact {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .form-contact h2 {
+    font-size: 1.4rem;
+  }
+  .contact-detail {
+    margin-top: 30px;
+  }
+  #form-contact {
+    padding-top: 0px;
+  }
+  #send-message {
+    margin-bottom: 1.5rem;
+  }
+}

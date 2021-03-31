@@ -122,3 +122,27 @@
   padding: 0px 10px;
   color: #999;
 }
+@media (max-width: 425px) {
+  .categories__container > div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .products-by-category {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category-box__icon {
+    font-size: 3rem;
+  }
+  .category-box a h5 {
+    font-size: 1rem;
+  }
+  .category-box > a {
+    padding: 15px;
+  }
+  .single-product {
+    height: 250px;
+  }
+  .single-product > a > img {
+    max-height: 120px;
+  }
+}

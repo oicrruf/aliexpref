@@ -87,7 +87,7 @@ export const SingUpForm = () => {
                 id="lastName"
               />
             </div>
-            <div className="form-group form-check">
+            <div className="form-group form-check mb-4">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -193,7 +193,7 @@ export const LoginForm = () => {
     <React.Fragment>
       <div className="container">
         <div className="col-lg-12 row form-container__title">
-          <h1>Crear nueva cuenta de usuario</h1>
+          <h1>Iniciar sesión</h1>
         </div>
         <FormContainer>
           <div className="col-lg-6">
@@ -236,7 +236,7 @@ export const LoginForm = () => {
                 signin(form);
               }}
               type="submit"
-              className="btn btn-primary btn-auth mt-4"
+              className="btn btn-primary btn-auth my-4"
             >
               Iniciar sesión
             </button>
