@@ -77,11 +77,7 @@ export const Footer = () => {
             <div className="col-lg-6">
               <Link to="/">
                 <img
-                  src={
-                    window.location.hostname != "oicrruf.github.io"
-                      ? "/assets/img/logo-devf-black.svg"
-                      : `${domain}/assets/img/logo-devf-black.svg`
-                  }
+                  src="https://raw.githubusercontent.com/oicrruf/aliexpref/develop/public/assets/img/logo-devf-black.svg"
                   className="img-fluid"
                 />
               </Link>

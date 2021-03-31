@@ -76,9 +76,7 @@ export const AllProducts = (props) => {
                         src={
                           p.image && p.image.includes(".")
                             ? p.image
-                            : window.location.hostname != "oicrruf.github.io"
-                            ? "/assets/img/product.jpg"
-                            : `${domain}/assets/img/product.jpg`
+                            : "https://raw.githubusercontent.com/oicrruf/aliexpref/develop/public/assets/img/product.jpg"
                         }
                       />
                     </Link>
