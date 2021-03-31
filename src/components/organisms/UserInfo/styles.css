@@ -8,3 +8,26 @@
 .user-info p {
   color: #999;
 }
+.avatar-and-action > img,
+.avatar-and-action > a {
+  display: flex;
+  flex-direction: column;
+}
+.avatar-and-action > a {
+  margin-top: 30px;
+}
+.avatar-and-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn.btn-dark.btn-auth {
+  border: 1px solid #333;
+  padding: 8px 40px;
+  text-transform: uppercase;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
