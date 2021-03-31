@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { config } from "../../../config";
 import { regex } from "../../../utils";
 import "./styles.css";
+
 const { register, login } = config;
 
 export const FormContainer = (props) => {
@@ -18,12 +19,11 @@ export const FormContainer = (props) => {
 
 export const SingUpForm = () => {
   const [form, setForm] = useState({});
+  const [redirect, setRedirect] = useState(false);
   const handlerForm = (value, input) => {
     setForm({ ...form, [input]: value });
   };
-  const redirect = () => {
-    console.log("Usuario creado correctamente");
-  };
+
   const singUp = (data) => {
     if (
       form.first_name !== "" &&
@@ -34,12 +34,11 @@ export const SingUpForm = () => {
       form.confirm_password !== "" &&
       form.password === form.confirm_password
     ) {
-      console.log(form);
       delete form.confirm_password;
       axios
         .post(register, data)
         .then((r) => {
-          r.status === 200 && redirect();
+          r.status === 200 && setRedirect(true);
         })
         .catch((e) => {
           console.log(e);
@@ -155,6 +154,7 @@ export const SingUpForm = () => {
             >
               Crear mi cuenta
             </button>
+            {redirect && <Redirect to="/login" />}
           </div>
         </FormContainer>
       </div>
@@ -164,6 +164,7 @@ export const SingUpForm = () => {
 
 export const LoginForm = () => {
   const [form, setForm] = useState({});
+  const [redirect, setRedirect] = useState(false);
   const handlerForm = (value, input) => {
     setForm({ ...form, [input]: value });
   };
@@ -179,6 +180,7 @@ export const LoginForm = () => {
         .post(login, data)
         .then((r) => {
           r.status === 200 && localStorage.setItem("@session", r.data.token);
+          setRedirect(true);
         })
         .catch((e) => {
           console.log(e);
@@ -238,6 +240,7 @@ export const LoginForm = () => {
             >
               Iniciar sesión
             </button>
+            {redirect && <Redirect to="/me" />}
           </div>
           <div className="col-lg-6">
             <h3>Información de registro</h3>

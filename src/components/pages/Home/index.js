@@ -55,57 +55,48 @@ export const AllProducts = (props) => {
   }, []);
 
   useEffect(() => {
-    let list = categories.map(
-      (e, i) => (
-        console.log(e, categoriesIcons[i].name),
-        (
-          <div
-            key={i}
-            id={e.toLowerCase()}
-            className="py-5 product-categoty__box"
-          >
-            <div className="container">
-              <h5 className="mb-0 category-name">
-                {e === categoriesIcons[i].name && categoriesIcons[i].icon}
-                <span>·</span>
-                {e}
-              </h5>
+    let list = categories.map((e, i) => (
+      <div key={i} id={e.toLowerCase()} className="py-5 product-categoty__box">
+        <div className="container">
+          <h5 className="mb-0 category-name">
+            {e === categoriesIcons[i].name && categoriesIcons[i].icon}
+            <span>·</span>
+            {e}
+          </h5>
 
-              <hr />
-              <div className="products-by-category">
-                {allProducts.map((p, i) => {
-                  if (p.category === e) {
-                    return (
-                      <div key={i} className="single-product" id={p._id}>
-                        <Link to={`product/${p._id}`}>
-                          <img
-                            className="img-fluid"
-                            src={
-                              p.image && p.image.includes(".")
-                                ? p.image
-                                : "/assets/img/product.jpg"
-                            }
-                          />
-                        </Link>
-                        <Link to={`product/${p._id}`}>
-                          <h6>{p.product_name}</h6>
-                        </Link>
-                        <div className="rating-block">
-                          <Rating />
-                        </div>
-                        <h4>
-                          {p.price !== undefined ? `$${p.price}.00` : `$0.00`}
-                        </h4>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-            </div>
+          <hr />
+          <div className="products-by-category">
+            {allProducts.map((p, i) => {
+              if (p.category === e) {
+                return (
+                  <div key={i} className="single-product" id={p._id}>
+                    <Link to={`product/${p._id}`}>
+                      <img
+                        className="img-fluid"
+                        src={
+                          p.image && p.image.includes(".")
+                            ? p.image
+                            : "/assets/img/product.jpg"
+                        }
+                      />
+                    </Link>
+                    <Link to={`product/${p._id}`}>
+                      <h6>{p.product_name}</h6>
+                    </Link>
+                    <div className="rating-block">
+                      <Rating />
+                    </div>
+                    <h4>
+                      {p.price !== undefined ? `$${p.price}.00` : `$0.00`}
+                    </h4>
+                  </div>
+                );
+              }
+            })}
           </div>
-        )
-      )
-    );
+        </div>
+      </div>
+    ));
     setList(list);
   }, [categories]);
   return (

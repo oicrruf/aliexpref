@@ -1,23 +1,35 @@
 import React from "react";
-import { UserInfo, EditUser } from "../../organisms";
+import { Redirect } from "react-router-dom";
+import { auth } from "../../../utils";
+import { EditUser, UserInfo } from "../../organisms";
 import { MainTemplate } from "../../templates";
 
 export const Me = (props) => {
-  return (
-    <React.Fragment>
-      <MainTemplate title={"Perfil"}>
-        <UserInfo />
-      </MainTemplate>
-    </React.Fragment>
-  );
+  const isAuthenticated = auth.isAuthenticated();
+  if (isAuthenticated) {
+    return (
+      <React.Fragment>
+        <MainTemplate title={"Perfil"}>
+          <UserInfo />
+        </MainTemplate>
+      </React.Fragment>
+    );
+  } else {
+    return <Redirect to="/login" />;
+  }
 };
 
 export const EditMe = (props) => {
-  return (
-    <React.Fragment>
-      <MainTemplate title={"Editar usuario"}>
-        <EditUser />
-      </MainTemplate>
-    </React.Fragment>
-  );
+  const isAuthenticated = auth.isAuthenticated();
+  if (isAuthenticated) {
+    return (
+      <React.Fragment>
+        <MainTemplate title={"Editar usuario"}>
+          <EditUser />
+        </MainTemplate>
+      </React.Fragment>
+    );
+  } else {
+    return <Redirect to="/login" />;
+  }
 };
