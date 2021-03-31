@@ -9,7 +9,7 @@ import { Header } from "../../organisms";
 import { MainTemplate } from "../../templates";
 import "./styles.css";
 
-const { products } = config;
+const { products, domain } = config;
 
 export const Categories = () => {
   const categoriesBox = popularCategories.map((b, i) => {
@@ -70,17 +70,19 @@ export const AllProducts = (props) => {
               if (p.category === e) {
                 return (
                   <div key={i} className="single-product" id={p._id}>
-                    <Link to={`product/${p._id}`}>
+                    <Link to={`/product/${p._id}`}>
                       <img
                         className="img-fluid"
                         src={
                           p.image && p.image.includes(".")
                             ? p.image
-                            : "/assets/img/product.jpg"
+                            : window.location.hostname != "oicrruf.github.io"
+                            ? "/assets/img/product.jpg"
+                            : `${domain}/assets/img/product.jpg`
                         }
                       />
                     </Link>
-                    <Link to={`product/${p._id}`}>
+                    <Link to={`/product/${p._id}`}>
                       <h6>{p.product_name}</h6>
                     </Link>
                     <div className="rating-block">
