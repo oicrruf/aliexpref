@@ -243,7 +243,7 @@ export const LoginForm = () => {
             {redirect && <Redirect to="/me" />}
           </div>
           <div className="col-lg-6">
-            <h3>Información de registro</h3>
+            <h3>Nuevo usuario</h3>
             <p className="why-register">
               Crear una cuenta tiene muchos beneficios: realice el pago más
               rápido, mantenga más de una dirección, realice un seguimiento de

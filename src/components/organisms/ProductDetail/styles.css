@@ -18,6 +18,13 @@
   color: #f4631b;
   font-weight: 700;
 }
+.product-detail > div.col-lg-6:first {
+  display: flex;
+}
+.product-detail > div > img {
+  max-height: 300px;
+  margin: auto;
+}
 .btn.btn-primary.btn-product,
 .btn.btn-primary.btn-product:active {
   background-color: #f4631b;
@@ -40,6 +47,7 @@
   font-weight: 700;
   text-decoration: none;
 }
+
 @media (max-width: 425px) {
   .product-detail > div > img {
     margin-bottom: 50px;

@@ -102,7 +102,7 @@ export const Footer = () => {
             </div>
             <div className="col-lg-6">
               <div className="categories-info">
-                <h6>Categorias</h6>
+                <h6>Categorías</h6>
                 <ul className="categories-list">{list}</ul>
               </div>
             </div>

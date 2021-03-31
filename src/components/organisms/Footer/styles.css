@@ -18,9 +18,11 @@
 .newsletter-block h5 {
   font-size: 1.1rem;
   font-weight: 700;
+  margin-right: auto;
 }
 .newsletter-block p {
   font-size: 0.9rem;
+  margin-right: auto;
 }
 footer {
   padding: 30px 0px;

@@ -155,11 +155,9 @@ export const ProductDetail = (props) => {
           </div>
         </div>
         <div className="py-5 product-categoty__box bg-white mb-5">
-          <div className="container">
-            <h5 className="mb-0 category-name">Productos relacionados</h5>
-            <hr />
-            <div className="products-by-category">{list}</div>
-          </div>
+          <h5 className="mb-0 category-name">Productos relacionados</h5>
+          <hr />
+          <div className="products-by-category">{list}</div>
         </div>
       </div>
     </React.Fragment>

@@ -13,7 +13,7 @@ export const Header = () => {
         <div className="header-counters">
           <div>
             <h3>27</h3>
-            <span>Categorias</span>
+            <span>Categorías</span>
           </div>
           <div>
             <h3>83</h3>
