@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/aliexpref/static/css/main.5b24e866.chunk.css",
-    "main.js": "/aliexpref/static/js/main.d8fc41af.chunk.js",
-    "main.js.map": "/aliexpref/static/js/main.d8fc41af.chunk.js.map",
+    "main.css": "/aliexpref/static/css/main.164c2315.chunk.css",
+    "main.js": "/aliexpref/static/js/main.07363b69.chunk.js",
+    "main.js.map": "/aliexpref/static/js/main.07363b69.chunk.js.map",
     "runtime-main.js": "/aliexpref/static/js/runtime-main.3d4108e5.js",
     "runtime-main.js.map": "/aliexpref/static/js/runtime-main.3d4108e5.js.map",
     "static/css/2.150d169a.chunk.css": "/aliexpref/static/css/2.150d169a.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.2774f945.chunk.js.map": "/aliexpref/static/js/3.2774f945.chunk.js.map",
     "index.html": "/aliexpref/index.html",
     "static/css/2.150d169a.chunk.css.map": "/aliexpref/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.5b24e866.chunk.css.map": "/aliexpref/static/css/main.5b24e866.chunk.css.map",
+    "static/css/main.164c2315.chunk.css.map": "/aliexpref/static/css/main.164c2315.chunk.css.map",
     "static/js/2.06697090.chunk.js.LICENSE.txt": "/aliexpref/static/js/2.06697090.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3d4108e5.js",
     "static/css/2.150d169a.chunk.css",
     "static/js/2.06697090.chunk.js",
-    "static/css/main.5b24e866.chunk.css",
-    "static/js/main.d8fc41af.chunk.js"
+    "static/css/main.164c2315.chunk.css",
+    "static/js/main.07363b69.chunk.js"
   ]
 }
