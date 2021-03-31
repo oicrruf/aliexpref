@@ -1,4 +1,5 @@
 {
+	"homepage": "https://oicrruf.github.io/aliexpref",
 	"name": "aliexpref",
 	"version": "0.1.0",
 	"private": true,
@@ -22,7 +23,9 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"prettier": "npx prettier --write src/**"
+		"prettier": "npx prettier --write src/**",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -45,6 +48,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^12.0.1",
 		"@commitlint/config-conventional": "^12.0.1",
+		"gh-pages": "^3.1.0",
 		"husky": "^4.3.8",
 		"prettier": "2.2.1"
 	},
