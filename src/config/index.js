@@ -7,4 +7,5 @@ export const config = {
   register: "https://ecomerce-master.herokuapp.com/api/v1/singup",
   login: "https://ecomerce-master.herokuapp.com/api/v1/login",
   me: "https://ecomerce-master.herokuapp.com/api/v1/user/me",
+  editme: "https://ecomerce-master.herokuapp.com/api/v1/user/",
 };

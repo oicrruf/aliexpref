@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
-import { Home, SingUp, Login, Product, Me } from "./components/pages";
+import { Home, SingUp, Login, Product, Me, EditMe } from "./components/pages";
 import { config } from "./config";
 
 const App = () => {
@@ -8,6 +8,9 @@ const App = () => {
     <React.Fragment>
       <Router>
         <Switch>
+          <Route path="/me/edit">
+            <EditMe />
+          </Route>
           <Route path="/me">
             <Me />
           </Route>

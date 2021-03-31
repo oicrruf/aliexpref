@@ -2,4 +2,4 @@ export { Home } from "./Home";
 export { SingUp } from "./SingUp";
 export { Login } from "./Login";
 export { Product } from "./Product";
-export { Me } from "./Me";
+export { Me, EditMe } from "./Me";
