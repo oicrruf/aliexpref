@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { config } from "../../../config";
-import "./styles.css";
 import moment from "moment";
 import "moment/locale/es";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "bootstrap";
+import { config } from "../../../config";
+import { auth } from "../../../utils";
+import "./styles.css";
 
 const { me, editme } = config;
 
@@ -52,6 +52,13 @@ export const UserInfo = props => {
 								to="/me/edit">
 								Editar
 							</Link>
+							<button
+								onClick={() => {
+									auth.logout();
+								}}
+								className="btn btn-dark btn-auth ml-4 mt-4">
+								Cerrar sesión
+							</button>
 						</div>
 					</div>
 				</div>
