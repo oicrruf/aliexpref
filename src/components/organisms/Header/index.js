@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import "./bg-background.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Header = () => {
